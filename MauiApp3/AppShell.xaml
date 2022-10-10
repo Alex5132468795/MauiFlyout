@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MauiApp3.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiApp3"
+    Shell.FlyoutBehavior="Flyout"
+    Shell.FlyoutWidth="300"
+    Shell.FlyoutBackdrop="black"
+    FlyoutBackgroundColor="Gray"
+    FlyoutHeaderBehavior="CollapseOnScroll"
+    FlyoutVerticalScrollMode="Enabled">
+    <Shell.FlyoutHeader>
+        <VerticalStackLayout>
+            <Image WidthRequest="50" HeightRequest="50" Source="dotnet_bot.png"></Image>
+            <Label Text="Header, Hello"></Label>
+        </VerticalStackLayout>
+    </Shell.FlyoutHeader>
+    <Shell.FlyoutFooter>
+        <VerticalStackLayout>
+            <Image WidthRequest="50" HeightRequest="50" Source="dotnet_bot.png"></Image>
+            <Label Text="Footer, Goodbye"></Label>
+        </VerticalStackLayout>
+    </Shell.FlyoutFooter>
+    <FlyoutItem Icon="https://cdn-icons-png.flaticon.com/512/447/447057.png" Title="Test" FlyoutDisplayOptions="AsMultipleItems">
+        <Tab  Title="Все" Icon="dotnet_bot.png" Shell.TabBarBackgroundColor="Gray" Shell.TabBarForegroundColor="Red" Shell.TabBarUnselectedColor="Azure" >
+            <ShellContent
+                Title="1"
+                ContentTemplate="{DataTemplate local:NewPage}"
+                Route="NewPage" />
+            <ShellContent
+                Title="2"
+                ContentTemplate="{DataTemplate local:NewPage2}"
+                Route="NewPage2" />
+        </Tab>
+    </FlyoutItem>
+   
+    <ShellContent
+        Title="Home"
+        Icon="dotnet_bot.png"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+    <ShellContent
+        Title="NewPage"
+        Icon="three.png"
+        ContentTemplate="{DataTemplate local:NewPage}"
+        Route="NewPage" />
+    <ShellContent
+        Title="NewPage2"
+        Icon="second.png"
+        ContentTemplate="{DataTemplate local:NewPage2}"
+        Route="NewPage2" />
+    <ShellContent
+        Title="NewPage3"
+        Icon="four.png"
+        ContentTemplate="{DataTemplate local:NewPage3}"
+        Route="NewPage3" />
+    <MenuItem x:Name="newCol"  Text="White"></MenuItem>
+    <MenuItem x:Name="New" Text="Black"></MenuItem>
+</Shell>
